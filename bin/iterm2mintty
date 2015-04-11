@@ -11,5 +11,5 @@ require "pathname"
 file = Pathname.new(ARGV[0])
 
 File.open("./.minttyrc", "w") do |f|
-  f.write Iterm2mintty.new(pathname: file).convert
+  f.write Iterm2mintty.convert(file)
 end
