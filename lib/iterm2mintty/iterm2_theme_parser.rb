@@ -23,21 +23,22 @@ class Iterm2mintty::Iterm2ThemeParser
       when "Cursor Color"
         Iterm2mintty::CursorColorComponent
       else
+        # TODO(bobcats): Probably good candidate for NullComponent
         next
       end.new(red, green, blue)
     end.compact
   end
 
   def red
-    Integer(value["Red Component"] * 255)
+    Integer(value.fetch("Red Component").to_f * 255)
   end
 
   def green
-    Integer(value["Green Component"] * 255)
+    Integer(value.fetch("Green Component").to_f * 255)
   end
 
   def blue
-    Integer(value["Blue Component"] * 255)
+    Integer(value.fetch("Blue Component").to_f * 255)
   end
 
   def parsed_theme
