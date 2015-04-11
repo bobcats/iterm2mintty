@@ -21,11 +21,23 @@ Or install it yourself as:
 
 ## Usage
 
+Iterm2mintty default writes to stdout. To use, try:
+
 ```
 iterm2mintty somecolorscheme.itermcolors
 ```
 
-Should output a .minttyrc file in whatever directory you ran it in.
+Or maybe even:
+
+```
+iterm2mintty somecolorscheme.itermcolors > .minttyrc
+```
+
+If you'd like to write the output to a file, use the `-o` flag (defaults to .minttyrc)
+
+```
+iterm2mintty somecolorscheme.itermcolors -o some/path/to/.minttyrc
+```
 
 ## Contributing
 

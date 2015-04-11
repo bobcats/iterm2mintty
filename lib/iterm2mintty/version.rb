@@ -1,3 +1,3 @@
-class Iterm2mintty
+module Iterm2mintty
   VERSION = "0.0.4.pre"
 end
