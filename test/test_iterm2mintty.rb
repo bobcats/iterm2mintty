@@ -4,9 +4,8 @@ require "pathname"
 
 class Iterm2minttyTest < MiniTest::Test
   def setup
-    @i22m = Iterm2mintty.new(
-      pathname: Pathname.new("test/Hybrid.itermcolors")
-    )
+    pathname = Pathname.new("test/Hybrid.itermcolors")
+    @i22m = Iterm2mintty.new(pathname)
   end
 
   def test_convert
