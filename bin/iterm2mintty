@@ -1,15 +1,7 @@
 #!/usr/bin/env ruby
 
-lib = File.expand_path(File.dirname(__FILE__) + '/../lib')
-$LOAD_PATH.unshift(lib) if File.directory?(lib) && !$LOAD_PATH.include?(lib)
+Signal.trap("INT") { exit false }
 
-Signal.trap("INT") { exit 1 }
+require "iterm2mintty/cli"
 
-require "iterm2mintty"
-require "pathname"
-
-file = Pathname.new(ARGV[0])
-
-File.open("./.minttyrc", "w") do |f|
-  f.write Iterm2mintty.convert(file)
-end
+Iterm2mintty::CLI.run(ARGV.dup)

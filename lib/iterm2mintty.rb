@@ -1,25 +1,8 @@
-require "iterm2mintty/version"
-require "iterm2mintty/mintty_theme"
-require "iterm2mintty/iterm2_theme"
+require "pathname"
+require "iterm2mintty/converter"
 
-class Iterm2mintty
-  attr_reader :pathname
-
-  def self.convert(pathname)
-    new(pathname).convert
-  end
-
-  def initialize(pathname)
-    @pathname = pathname
-  end
-
-  def convert
-    Iterm2mintty::MinttyTheme.new(iterm2_theme.components).output
-  end
-
-  private
-
-  def iterm2_theme
-    Iterm2mintty::Iterm2Theme.from_file(pathname)
+module Iterm2mintty
+  def self.convert(source)
+    Converter.new.call(source)
   end
 end
