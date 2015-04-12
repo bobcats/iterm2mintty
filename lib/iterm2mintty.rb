@@ -1,4 +1,3 @@
-require "pathname"
 require "iterm2mintty/converter"
 
 module Iterm2mintty
