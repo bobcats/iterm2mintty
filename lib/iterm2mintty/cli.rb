@@ -21,7 +21,7 @@ module Iterm2mintty
 
       io.puts Iterm2mintty.convert(source)
 
-      if io.close_on_exec?
+      if io.autoclose?
         io.close
       end
     end
@@ -49,7 +49,7 @@ module Iterm2mintty
         opts.on("-h", "--help", "Prints this help :)") do
           puts opts
 
-          if io.close_on_exec?
+          if io.autoclose?
             io.close
           end
 
@@ -62,7 +62,7 @@ module Iterm2mintty
       if args.empty?
         puts parser
 
-        if io.close_on_exec?
+        if io.autoclose?
           io.close
         end
 
