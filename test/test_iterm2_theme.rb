@@ -2,7 +2,7 @@ require "helper"
 require "iterm2mintty/iterm2_theme_parser"
 
 module Iterm2mintty
-  class Iterm2ThemeParserTest < MiniTest::Test
+  class Iterm2ThemeParserTest < Minitest::Unit::TestCase
     def setup
       itermcolors = Pathname.new("test/fixtures/Hybrid.itermcolors")
       @parser = Iterm2ThemeParser.new(itermcolors)
