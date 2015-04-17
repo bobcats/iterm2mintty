@@ -2,7 +2,7 @@ require "helper"
 require "iterm2mintty/converter"
 
 module Iterm2mintty
-  class ConverterTest < MiniTest::Test
+  class ConverterTest < Minitest::Unit::TestCase
     def setup
       @to = MiniTest::Mock.new
       @from = MiniTest::Mock.new

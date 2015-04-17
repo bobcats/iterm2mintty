@@ -1,6 +1,6 @@
 require "helper"
 
-class Iterm2minttyTest < MiniTest::Test
+class Iterm2minttyTest < Minitest::Unit::TestCase
   def setup
     @path = Pathname.new("test/fixtures/Hybrid.itermcolors")
   end

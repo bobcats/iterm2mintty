@@ -2,7 +2,7 @@ require "helper"
 require "iterm2mintty/mintty_theme"
 
 module Iterm2mintty
-  class MinttyThemeTest < MiniTest::Test
+  class MinttyThemeTest < Minitest::Unit::TestCase
     def setup
       @components = [
         BlackComponent.new(0, 0, 0),
